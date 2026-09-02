@@ -1,6 +1,7 @@
 ﻿using Patterns.Creational;
 
 
+// The client code creates a builder object, passes it to the director and then initiates the construction process.
 var director = new Director();
 var builder = new ConcreteBuilder();
 
