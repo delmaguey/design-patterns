@@ -1,5 +1,8 @@
 namespace Patterns.Creational
 {
+    
+    // The Builder interface specifies methods for creating the different parts
+    // of the Product objects.
     public interface IBuilder
     {
         void BuildPartA();
@@ -7,6 +10,8 @@ namespace Patterns.Creational
         void BuildPartC();
     }
 
+    // The Concrete Builder class follow the Builder interface and provide
+    // specific implementations of the building steps. 
     public class ConcreteBuilder: IBuilder
     {
         private Product _product = new Product();
@@ -36,6 +41,9 @@ namespace Patterns.Creational
             this._product.Add("PartC1");
         }
 
+
+        // Concrete Builders are supposed to provide their own methods for retrieving results.
+        // That's because various types of builders may create entirely different products that don't follow the same interface.  
         public Product GetProduct()
         {
             Product result = this._product;
